@@ -22,6 +22,6 @@ reverse([Head|Tail]) ->
 flatten([]) -> [];
 
 flatten([Head|Tail]) -> 
-  flatten(Head) ++ flatten(Tail).
+  flatten(Head) ++ flatten(Tail);
 
 flatten(Item) -> [Item].
