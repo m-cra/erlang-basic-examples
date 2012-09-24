@@ -22,9 +22,6 @@ reverse([Head|Tail]) ->
 flatten([]) -> [];
 
 flatten([Head|Tail]) -> 
-  case Head of 
-    [_T|[]] -> [Head|flatten(Tail)]; 
-    _Other -> flatten(Head) ++ flatten(Tail)
-  end;
+  flatten(Head) ++ flatten(Tail).
 
 flatten(Item) -> [Item].
