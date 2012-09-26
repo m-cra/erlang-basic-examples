@@ -1,6 +1,6 @@
 %% gs_impl.erl 
 
--module(gs_impl).
+-module(gs_manager).
 -behaviour(gen_server).
 
 -export([init/1,
@@ -15,7 +15,7 @@
 
 
 start_link()->
-  gen_server:start_link({local, socket_manager}, ?MODULE, [], []).
+  gen_server:start_link({local, manager}, ?MODULE, [], []).
 
 init([])->
   {ok, #state{}}.
