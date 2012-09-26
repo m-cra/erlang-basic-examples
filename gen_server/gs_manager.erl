@@ -13,25 +13,25 @@
 
 -record(state, {}).
 
-start_link()->
+start_link() ->
   gen_server:start_link({local, manager}, ?MODULE, [], []).
 
-init([])->
+init([]) ->
   {ok, #state{}}.
 
-handle_call(_Request, _From, State)->
+handle_call(_Request, _From, State) ->
   {reply, ok, State}.
 
-handle_cast(_Msg, State)->
+handle_cast(_Msg, State) ->
   {noreply, State}.
 
-handle_info(Info, State)->
+handle_info(Info, State) ->
   io:format("msg received: ~n", []),
   io:format("input msg is: ~w~n", [Info]),
   {noreply, State}.
 
-terminate(_Reason, _State)->
+terminate(_Reason, _State) ->
   ok.
 
-code_change(_Old, State,_Ext)->
+code_change(_Old, State, _Ext) ->
   {ok, State}.
