@@ -1,5 +1,9 @@
 %% event manager
 
+%% 事件管理器本质上是在维护一个 {Module, State} 对的列表
+%% 其中每个 Module 是一个事件处理器
+%% State 是事件处理器的内部状态
+
 -module(event_manager).
 
 %% 启动event manager进程并且连接
