@@ -74,7 +74,6 @@ handle_call({getid,IdType},From,State)->
   end,
   {reply,Id,State}.
 
-
 handle_cast(_From,State)->
   {noreply,ok}.
 
