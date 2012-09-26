@@ -6,7 +6,8 @@
 -export([init/1, handle_event/2, terminate/2]).
 
 init(File) ->
-  {ok, _Fd} = file:open(File, read).
+  {ok, Fd} = file:open(File, read),
+  {ok, Fd}.
 
 handle_event(ErrorMsg, Fd) ->
   io:format(Fd, "***Error*** ~p~n", [ErrorMsg]),
