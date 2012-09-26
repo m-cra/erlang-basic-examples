@@ -17,7 +17,7 @@
 
 %%start listen server
 start(Port)->
-  case (do_init(Port))of
+  case(do_init(Port))of
     {ok,ListenSocket}->
       accept_loop(ListenSocket);
     _Els ->
